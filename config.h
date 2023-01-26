@@ -113,6 +113,7 @@ static const Key keys[] = {
 	{ MODKEY|Mod4Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,    			XK_q,      killclient,     {0} },
+	{ MODKEY,			XK_o,	   spawn,	   SHCMD("nautilus --new-window") },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
@@ -128,6 +129,8 @@ static const Key keys[] = {
 	/* volume controls */
 	{ NULL,							XF86XK_AudioRaiseVolume,	spawn, SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+; kill -44 $(pidof dwmblocks)") },
 	{ NULL,							XF86XK_AudioLowerVolume,	spawn, SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-; kill -44 $(pidof dwmblocks)") },
+	{ NULL,							XF86XK_MonBrightnessUp,		spawn, SHCMD("brightnessctl set 5%+") },
+	{ NULL,							XF86XK_MonBrightnessDown,	spawn, SHCMD("brightnessctl set 5%-") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
